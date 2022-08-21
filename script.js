@@ -11,8 +11,9 @@ function itemMaker (title,date,notes,list){
 }
 
 itemMaker("Doctor Appointment","Today","need to get blood work",listone);
-itemMaker("Doctor Appointment","Today","need to get blood work",listone);
+itemMaker("Bussiness","Today","need to get Moe Money",listone);
 itemMaker("Tomorrow tile","tomorrow","this is some sample text to make sure its working",listtwo);
+itemMaker("Future tile","future","this is some sample text to make sure its working",listthree);
 listone.forEach(cardMaker);
 
 ////////// DOM MANIPULATION //////////
@@ -43,6 +44,9 @@ function cardMaker (arrayindex){
     cardDiv.appendChild(noteDiv);
     const iconDiv = document.createElement('div');
     iconDiv.classList.add('icondiv')
+    iconAdder(iconDiv,'img/trashicon.png')
+    iconAdder(iconDiv,'img/favoriteiconthree.png')
+    iconAdder(iconDiv,'img/download.svg')
     cardDiv.appendChild(iconDiv);
     mainDiv.appendChild(cardDiv);
 }
@@ -51,7 +55,11 @@ function cleaner(){
         mainDiv.removeChild(mainDiv.lastChild);
     }
 }
-
+function iconAdder(div,iconname) {
+    const temp = document.createElement('img')
+    temp.setAttribute('src',`${iconname}`)
+    div.appendChild(temp)
+}
 document.getElementById('plusicon').addEventListener('click', ()=>{
     alert('To add more notes please subscribe for only $5.99!')
 })
