@@ -38,7 +38,6 @@ function cardMaker (arrayindex){
     noteDiv.classList.add('notediv')
     const noteBox = document.createElement('textarea')
     noteBox.setAttribute('rows','5')
-    console.log(noteBox.textarea)
     noteBox.setAttribute('placeholder','Add Notes')
     noteDiv.appendChild(noteBox);
     cardDiv.appendChild(noteDiv);
@@ -79,9 +78,21 @@ function menuPopper (){
     }
 }
 
-const todayLink = document.getElementById('tomorrowid')
+const todayLink = document.getElementById('todayid')
 todayLink.addEventListener('click',()=>{
     cleaner();
     popMenu.style.display = ''
+    listone.forEach(cardMaker);
+})
+const tomorrowLink = document.getElementById('tomorrowid')
+tomorrowLink.addEventListener('click',()=>{
+    cleaner();
+    popMenu.style.display = ''
     listtwo.forEach(cardMaker);
+})
+const futureLink = document.getElementById('futureid')
+futureLink.addEventListener('click',()=>{
+    cleaner();
+    popMenu.style.display = ''
+    listthree.forEach(cardMaker);
 })
