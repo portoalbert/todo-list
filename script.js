@@ -36,7 +36,11 @@ function cardMaker (arrayindex){
     cardDiv.appendChild(dateDiv);
     const noteDiv = document.createElement('div');
     noteDiv.classList.add('notediv')
-    noteDiv.innerText = arrayindex.notes;
+    const noteBox = document.createElement('textarea')
+    noteBox.setAttribute('rows','5')
+    console.log(noteBox.textarea)
+    noteBox.setAttribute('placeholder','Add Notes')
+    noteDiv.appendChild(noteBox);
     cardDiv.appendChild(noteDiv);
     const iconDiv = document.createElement('div');
     iconDiv.classList.add('icondiv')
@@ -49,7 +53,9 @@ function cleaner(){
     }
 }
 
-
+document.getElementById('plusicon').addEventListener('click', ()=>{
+    alert('To add more notes please subscribe for only $5.99!')
+})
 
 ////////// POPUP MENU ////////////////////////////////
 const menuArray = ['Today','Tomorrow','Future'];
